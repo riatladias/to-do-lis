@@ -19,14 +19,21 @@ const att = document.addEventListener('DOMContentLoaded', () => {
     handleDisplay()
 })
 
+function inlista(task){
+    return temTarefa = toDo.some(item => item.tarefa.toUpperCase() == task.toUpperCase())
+}
+
 btnAdc.addEventListener("click", () => {
-    if (txt.value == 0) {
+    if (txt.value == 0 || inlista(txt.value)) {
         alert('Necessário adicionar tarefa ou tarefa já existente.');
     } else {
         let task = txt.value;
         addTask(task)
     }
 })
+
+
+
 
 btnRemove.addEventListener('click', () => {
     toDo = getBanco()
@@ -37,7 +44,7 @@ btnRemove.addEventListener('click', () => {
 })
 
 function handleDisplay() {
-    toDo.forEach( task => {
+    toDo.forEach(task => {
         display.innerHTML += `<h1>${task.tarefa}</h1>`
     })
 }
