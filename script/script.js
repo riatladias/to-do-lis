@@ -12,9 +12,8 @@ function setBanco(toDo) {
 function getBanco() {
     return JSON.parse(localStorage.getItem('todoList')) ?? []
 }
-// const getBanco = () => JSON.parse(localStorage.getItem('todoList')) ?? []
 
-const att = document.addEventListener('DOMContentLoaded', () => {
+const attTela = document.addEventListener('DOMContentLoaded', () => {
     toDo = getBanco()
     handleDisplay()
 })
@@ -24,16 +23,15 @@ function inlista(task){
 }
 
 btnAdc.addEventListener("click", () => {
-    if (txt.value == 0 || inlista(txt.value)) {
-        alert('Necessário adicionar tarefa ou tarefa já existente.');
+    if (txt.value == 0) {
+        alert('Necessário adicionar tarefa!');
+    } else if (inlista(txt.value)) {
+        alert('Tarefa já existente, adicione uma nova tarefa!')
     } else {
         let task = txt.value;
         addTask(task)
     }
 })
-
-
-
 
 btnRemove.addEventListener('click', () => {
     toDo = getBanco()
@@ -45,7 +43,7 @@ btnRemove.addEventListener('click', () => {
 
 function handleDisplay() {
     toDo.forEach(task => {
-        display.innerHTML += `<h1>${task.tarefa}</h1>`
+        display.innerHTML += `<label>${task.tarefa}</label>`
     })
 }
 
@@ -62,9 +60,3 @@ function addTask(txt) {
     handleDisplay()
     setBanco(toDo)
 }
-
-
-
-
-
-
