@@ -22,7 +22,7 @@ header {
     color: #37352F;
     margin: 4rem auto;
     padding: 2rem;
-    width: 60vw;
+    max-width: 900px;
     border-radius: 8px;
     box-shadow:
         7.5px 7.2px 5.3px rgba(0, 0, 0, 0.018),
@@ -71,6 +71,7 @@ header {
 }
 
 .card label {
+    display: block;
     font-weight: 200;
     margin-bottom: 1rem;
 }
@@ -89,4 +90,11 @@ footer a {
     color: white;
 
 
+}
+
+@media (max-width: 900px) {
+    .conteiner{
+        width: 90vw;
+    }
+    
 }

@@ -18,7 +18,7 @@ const attTela = document.addEventListener('DOMContentLoaded', () => {
     handleDisplay()
 })
 
-function inlista(task){
+function inlista(task) {
     return temTarefa = toDo.some(item => item.tarefa.toUpperCase() == task.toUpperCase())
 }
 
@@ -59,4 +59,9 @@ function addTask(txt) {
     displayReset()
     handleDisplay()
     setBanco(toDo)
+}
+
+function handleCheck() {
+    toDo = getBanco()
+    
 }
