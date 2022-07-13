@@ -1,67 +1,65 @@
 const txt = document.querySelector('#notion');
 const btnAdc = document.querySelector('#btn-adc');
-const display = document.querySelector('div#res');
-const btnRemove = document.getElementById('remover');
+const display = document.querySelector('#res');
 
-let toDo = []
+let toDo = [];
 
 function setBanco(toDo) {
-    localStorage.setItem('todoList', JSON.stringify(toDo))
+    localStorage.setItem('todoList', JSON.stringify(toDo));
 }
 
 function getBanco() {
-    return JSON.parse(localStorage.getItem('todoList')) ?? []
+    return JSON.parse(localStorage.getItem('todoList')) ?? [];
 }
-
-const attTela = document.addEventListener('DOMContentLoaded', () => {
-    toDo = getBanco()
-    handleDisplay()
+// exibe as tarefas armazenas
+const updateDisplay = document.addEventListener('DOMContentLoaded', () => {
+    toDo = getBanco();
+    handleDisplay();
 })
-
+// faz a verificacao de tarefas repetidas
 function inlista(task) {
-    return temTarefa = toDo.some(item => item.tarefa.toUpperCase() == task.toUpperCase())
+    return temTarefa = toDo.some(item => item.tarefa.toUpperCase() == task.toUpperCase());
 }
-
+// adiciona novas tarefas
+// trata as verificacoes antes de adc a tarefa
 btnAdc.addEventListener("click", () => {
     if (txt.value == 0) {
         alert('Necessário adicionar tarefa!');
     } else if (inlista(txt.value)) {
-        alert('Tarefa já existente, adicione uma nova tarefa!')
+        alert('Tarefa já existente, adicione uma nova tarefa!');
     } else {
         let task = txt.value;
-        addTask(task)
+        addTask(task);
     }
 })
-
-btnRemove.addEventListener('click', () => {
-    toDo = getBanco()
-    toDo.splice(-1)
-    displayReset()
-    handleDisplay()
-    setBanco(toDo)
-})
-
+// cria uma nova tarefa
+function addTask(txt) {
+    toDo = getBanco();
+    toDo.push({ 'tarefa': txt, 'status': '' });
+    displayReset();
+    handleDisplay();
+    setBanco(toDo);
+}
+// removeTask a tarefa especifica
+function removeTask(index) {
+    toDo = getBanco();
+    toDo.splice(index, 1);
+    displayReset();
+    handleDisplay();
+    setBanco(toDo);
+}
+// Exibe as tarefas na tela
 function handleDisplay() {
-    toDo.forEach(task => {
-        display.innerHTML += `<label>${task.tarefa}</label>`
+    toDo.forEach((task, index) => {
+        display.innerHTML += `<li><input type="button" value="Done" onclick="removeTask(${index})"> - ${task.tarefa}</li>`;
     })
 }
-
+// limpa os inputs para receber novos txt
 function displayReset() {
-    display.innerHTML = ''
-    txt.focus()
-    txt.value = ''
+    display.innerHTML = '';
+    txt.focus();
+    txt.value = '';
 }
 
-function addTask(txt) {
-    toDo = getBanco()
-    toDo.push({ 'tarefa': txt, 'status': '' });
-    displayReset()
-    handleDisplay()
-    setBanco(toDo)
-}
 
-function handleCheck() {
-    toDo = getBanco()
-    
-}
+

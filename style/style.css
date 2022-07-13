@@ -63,26 +63,36 @@ header {
 .input [type="button"]:hover {
     background-color: white;
     color: #2dccb8;
-
 }
 
 .card {
-    font-size: 2rem;
+    margin-left: 4rem;
+    font-size: 2rem;    
 }
 
-.card label {
-    display: block;
-    font-weight: 200;
-    margin-bottom: 1rem;
-}
-
-.card p {
-    font-weight: 200;
-    margin-bottom: 1rem;
-}
-
-.card [type="checkbox"] {
+.card li{
     display: flex;
+    list-style: none;
+    margin-bottom: 1.5rem;
+    font-weight: 200;
+    text-align: start;
+ 
+}
+
+.card [type="button"] {
+    cursor: pointer;
+    padding: .5rem;
+    background-color: rgb(240, 110, 110);
+    color: white;
+    border: 1px solid rgb(240, 41, 41);
+    border-radius: 7px;
+    transition: 0.3s;
+}
+
+.card [type="button"]:hover {
+    background-color: white;
+    color: rgb(240, 41, 41);
+
 }
 
 footer a {
