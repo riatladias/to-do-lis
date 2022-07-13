@@ -6,13 +6,13 @@ Foi usado a propriedade localstorage para persistência de dados.
 [Link demo](https://riatladias.github.io/to-do-lis/)
 
 ## Features
-Na To do list:
+To do list:
 
 - Você adiciona tarefas 
-- Remove a última tarefa
+- Excluir a tarefa desejada
 ## (Em construção)
 - Poderá acompanhar o status
-- Excluir a tarefa desejada
+
 
 ## Demostração
 ---
