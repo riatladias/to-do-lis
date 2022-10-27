@@ -1,5 +1,5 @@
 # Descrição :bookmark_tabs:
-Uma lista de tarefas (To do list) simples usando persistência de dados local. Um projetos que eu tenho muito orgulho de ter desenvolvido, pois mostra bastante da minha evolução do meu conhecimento, pensar computacional e logico.
+Uma lista de tarefas (To do list) simples usando persistência de dados local. Um projetos que eu tenho muito orgulho de ter desenvolvido, pois mostra bastante da minha evolução no pensamento lógico e computacional.
 
 Foi usado a propriedade localstorage para persistência de dados.
 
