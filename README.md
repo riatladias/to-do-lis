@@ -3,7 +3,7 @@ Uma lista de tarefas (To do list) simples usando persistência de dados local. U
 
 Foi usado a propriedade localstorage para persistência de dados.
 
-[Link demo](https://riatladias.github.io/to-do-lis/){:target="\_blank"}
+[Link demo](https://riatladias.github.io/to-do-lis/){:target="_blank"}
 
 ## Features
 To do list:
